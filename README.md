@@ -37,7 +37,31 @@ as external Arduino.
 Schematics and PCB can be found [here](https://easyeda.com/editor#id=1c84f9033af4487bb82d24a9e845125c|2ef221c521474696ba044a7bebf7602c).
 
 BOM:
-- TBD (look at the easyeda project)
+MFR Part:            MFR:               QTY:
+BSS138	            ON Semiconductor	  4
+106990005	          Seeed Studio	      1
+MB 12	              Visaton	            1
+ERJ-UP8F4701V	      Panasonic	          19
+CRCW12060000Z0EAC  	Vishay	            6
+2N7002	            ON Semiconductor	  1
+UVZ1H101MPD1TD	    Nichicon	          1
+90147-1108	        Molex	              2
+M20-9990345	        Harwin	            8
+M20-9720345	        Harwin	            1
+M20-9720245	        Harwin	            2
+OQ025A000000G	      Amphenol	          2
+M20-9730245	        Harwin	            2
+M20-9990445	        Harwin	            2
+URS1H101MPD1TD	    Nichicon	          1
+CRCW1206120RFKEAC	  Vishay	            4
+VJ1206Y104JXAMR	    Vishay	            8
+UMK316BJ105KD-T	    Taiyo Yuden	        1
+FDLL4148-D87Z	      ON Semiconductor	  1
+76342-320HLF	      FCI / Amphenol	    1
+DMN3150L-7	        Diodes Incorporated	1
+IRL2203NPBF	        Infineon	          1
+
+Choice: Add 2x JST-XH 3-Pin and 1x JST-XH 4-Pin for Motor + E-stop connectors or substitute with bare pin headers.
 
 # Software
 
@@ -50,4 +74,35 @@ sudo apt-get install cmake g++ wiringpi
 ```
 
 Building
-TBD
+-Install git on the Raspberry Pi.
+-Git clone the repo
+-Use Nano to edit:
+    -> Config.h
+        -> steps/mm
+        -> defined/commented hardware buttons
+    -> SpeedyStepper.h
+        -> Steps/rev
+        -> speeds in steps/s
+        -> accelerations in steps/s/s
+    -> SpeedyStepper.h
+        -> Steps/rev
+        -> speeds in steps/s
+        -> accelerations in steps/s/s
+ 
+ create cmake dependencies with:
+    cmake ~/nanodlpshield
+   
+ build with:
+    cmake --build ~/nanodlpshield
+    
+ install with:
+    cmake --install ~/nanodlpshield
+    
+ Run the installed app with:
+    ./NanoDlpShield
+ and note the resulting name return, which should be:
+     Name: /dev/pts/1   (the number will increment if you restart the app without rebooting the pi)
+     
+ Open NanoDLP Web GUI, set the shield mode to USB/I2C and set the address to the value returned from 'Name:'.
+ 
+ Go to Tools -> RAMPS Terminal and test some basic commands.
