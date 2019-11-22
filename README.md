@@ -65,15 +65,15 @@ Choice: Add 2x JST-XH 3-Pin and 1x JST-XH 4-Pin for Motor + E-stop connectors or
 
 # Software
 
-Software is based on WiringPi library which provides a Arduino-like interface to drive RasPi's GPIOs. Additionally it uses 
-[SpeedyStepper](https://github.com/Stan-Reifel/SpeedyStepper) library with minor modifications to drive stepper motor. 
+Software is based on WiringPi library which provides a Arduino-like interface to drive RasPi's GPIOs. Additionally it uses
+[SpeedyStepper](https://github.com/Stan-Reifel/SpeedyStepper) library with minor modifications to drive stepper motor.
 
 Installing prerequisites
 ```bash
 sudo apt-get install cmake g++ wiringpi
 ```
 
-Building
+# Building
 -Install git on the Raspberry Pi.
 -Git clone the repo
 -Use Nano to edit:
@@ -88,21 +88,29 @@ Building
         -> Steps/rev
         -> speeds in steps/s
         -> accelerations in steps/s/s
- 
+
  create cmake dependencies with:
+ ```bash
     cmake ~/nanodlpshield
-   
+ ```   
  build with:
+ ```bash
     cmake --build ~/nanodlpshield
-    
+ ```  
  install with:
+ ```bash
     cmake --install ~/nanodlpshield
-    
+ ```    
  Run the installed app with:
+ ```bash
     ./NanoDlpShield
+ ```
  and note the resulting name return, which should be:
-     Name: /dev/pts/1   (the number will increment if you restart the app without rebooting the pi)
-     
+     ```bash
+     Name: /dev/pts/1
+     ```
+    (the number will increment if you restart the app without rebooting the pi)
+
  Open NanoDLP Web GUI, set the shield mode to USB/I2C and set the address to the value returned from 'Name:'.
- 
+
  Go to Tools -> RAMPS Terminal and test some basic commands.
