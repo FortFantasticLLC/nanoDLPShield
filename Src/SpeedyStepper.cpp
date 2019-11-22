@@ -209,10 +209,10 @@ SpeedyStepper::SpeedyStepper()
   stepPin = 0;
   directionPin = 0;
   stepsPerRevolution = 200.0;
-  stepsPerMillimeter = 25.0;
+  stepsPerMillimeter = 100.0;
   currentPosition_InSteps = 0;
-  desiredSpeed_InStepsPerSecond = 200.0;
-  acceleration_InStepsPerSecondPerSecond = 200.0;
+  desiredSpeed_InStepsPerSecond = 800.0;
+  acceleration_InStepsPerSecondPerSecond = 800.0;
   currentStepPeriod_InUS = 0.0;
 }
 
