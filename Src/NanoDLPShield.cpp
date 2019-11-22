@@ -343,9 +343,8 @@ int main(int argc, char** argv)
         if(isButtonPressed(LED_ON_BTN_PIN))
             processLEDButon();
 
-        string cmd;
 #endif //SUPPORT_LED_ON_BUTTON
-        
+        string cmd;
         if(pty.receiveNextString(cmd))
         {
             cout << "Received line: " << cmd << endl;
