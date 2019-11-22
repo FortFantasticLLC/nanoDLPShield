@@ -9,13 +9,13 @@ const int STEP_PIN = 6;
 const int ENABLE_PIN = 12;
 
 // Steps in 1mm along Z axis
-const float STEPS_PER_MM = 400*16/4; //steps per revolution * microstepping / mm per revolution
+const float STEPS_PER_MM = 200*16/2; //steps per revolution * microstepping / mm per revolution
 const float DEFAULT_SPEED = 6; // mm/s
 const float DEFAULT_ACCELERATION = 20; // mm/s2
 
 
 // Enable this option if the printer has hardware up/down button.
-#define SUPPORT_UP_DOWN_BUTTONS 1
+//#define SUPPORT_UP_DOWN_BUTTONS 1
 
 #if SUPPORT_UP_DOWN_BUTTONS
 // a single z-axis movement using HW buttons 
@@ -41,7 +41,7 @@ const int DOWN_BTN_PUD = 2; // PUD_UP
 
 
 // Enable this option if the printer has hardware LED On/Off button
-#define SUPPORT_LED_ON_BUTTON 1
+//#define SUPPORT_LED_ON_BUTTON 1
 #if SUPPORT_LED_ON_BUTTON
 const int LED_ON_BTN_PIN = 13;
 const int LED_ON_BTN_PUD = 2; // PUD_UP
