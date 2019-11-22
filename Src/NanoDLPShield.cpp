@@ -123,6 +123,7 @@ void processLEDOffCmd() // M5 or M107
     digitalWrite(UV_LED_PIN, LOW);
 }
 
+#if SUPPORT_LED_ON_BUTTON
 void processLEDButon()
 {
     digitalWrite(UV_LED_PIN, !digitalRead(UV_LED_PIN));
@@ -130,6 +131,7 @@ void processLEDButon()
     while(isButtonPressed(LED_ON_BTN_PIN))
         ;
 }
+#endif //SUPPORT_LED_ON_BUTTON
 
 void setup()
 {
@@ -336,11 +338,14 @@ int main(int argc, char** argv)
             updateLastMovement();
         }
 #endif //SUPPORT_UP_DOWN_BUTTONS
-
+        
+#if SUPPORT_LED_ON_BUTTON
         if(isButtonPressed(LED_ON_BTN_PIN))
             processLEDButon();
 
         string cmd;
+#endif //SUPPORT_LED_ON_BUTTON
+        
         if(pty.receiveNextString(cmd))
         {
             cout << "Received line: " << cmd << endl;
