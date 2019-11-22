@@ -38,28 +38,30 @@ Schematics and PCB can be found [here](https://easyeda.com/editor#id=1c84f9033af
 
 BOM:
 MFR Part:            MFR:               QTY:
-BSS138	            ON Semiconductor	  4
-106990005	          Seeed Studio	      1
-MB 12	              Visaton	            1
-ERJ-UP8F4701V	      Panasonic	          19
-CRCW12060000Z0EAC  	Vishay	            6
-2N7002	            ON Semiconductor	  1
-UVZ1H101MPD1TD	    Nichicon	          1
-90147-1108	        Molex	              2
-M20-9990345	        Harwin	            8
-M20-9720345	        Harwin	            1
-M20-9720245	        Harwin	            2
-OQ025A000000G	      Amphenol	          2
-M20-9730245	        Harwin	            2
-M20-9990445	        Harwin	            2
-URS1H101MPD1TD	    Nichicon	          1
-CRCW1206120RFKEAC	  Vishay	            4
-VJ1206Y104JXAMR	    Vishay	            8
-UMK316BJ105KD-T	    Taiyo Yuden	        1
-FDLL4148-D87Z	      ON Semiconductor	  1
-76342-320HLF	      FCI / Amphenol	    1
-DMN3150L-7	        Diodes Incorporated	1
-IRL2203NPBF	        Infineon	          1
+BOM:
+-MFR Part:            MFR:               QTY:
+- BSS138	            ON Semiconductor	  4
+- 106990005	          Seeed Studio	      1
+- MB 12	              Visaton	            1
+- ERJ-UP8F4701V	      Panasonic	          19
+- CRCW12060000Z0EAC  	Vishay	            6
+- 2N7002	            ON Semiconductor	  1
+- UVZ1H101MPD1TD	    Nichicon	          1
+- 90147-1108	        Molex	              2
+- M20-9990345	        Harwin	            8
+- M20-9720345	        Harwin	            1
+- M20-9720245	        Harwin	            2
+- OQ025A000000G	      Amphenol	          2
+- M20-9730245	        Harwin	            2
+- M20-9990445	        Harwin	            2
+- URS1H101MPD1TD	    Nichicon	          1
+- CRCW1206120RFKEAC	  Vishay	            4
+- VJ1206Y104JXAMR	    Vishay	            8
+- UMK316BJ105KD-T	    Taiyo Yuden	        1
+- FDLL4148-D87Z	      ON Semiconductor	  1
+- 76342-320HLF	      FCI / Amphenol	    1
+- DMN3150L-7	        Diodes Incorporated	1
+- IRL2203NPBF	        Infineon	          1
 
 Choice: Add 2x JST-XH 3-Pin and 1x JST-XH 4-Pin for Motor + E-stop connectors or substitute with bare pin headers.
 
