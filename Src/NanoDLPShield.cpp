@@ -33,7 +33,7 @@ void setSteperLowSpeed()
 
 void setSteperHighSpeed()
 {
-    stepper.setSpeedInMillimetersPerSecond(HIGH_SPEED); 
+    stepper.setSpeedInMillimetersPerSecond(HIGH_SPEED);
     stepper.setAccelerationInMillimetersPerSecondPerSecond(HIGH_ACCELERATION);
 }
 
@@ -167,10 +167,16 @@ void setup()
 
     // Signaling (general purpose) LED
     pinMode(LED_PIN, OUTPUT);
-    
+
     // FAN
     pinMode(FAN_PIN, OUTPUT);
     digitalWrite(FAN_PIN, 1);
+
+    //ENDSTOPS
+    pinMode(Z_BOT_PIN, INPUT);
+    pullUpDnControl(Z_BOT_PIN, Z_BOT_PUD);
+    pinMode(Z_TOP_PIN, INPUT);
+    pullUpDnControl(Z_TOP_PIN, Z_TOP_PUD);
 }
 
 int parseInt(const char * buf, char prefix, int value)
@@ -248,7 +254,10 @@ bool parseGCommand(const char * cmd)
             processPauseCmd(duration);
             return true;
         }
+        case 28: // G28 Home
+        {
 
+        }
         case 90: // G90 - Set Absolute Positioning
             relativePositioning = false;
             return true;
@@ -268,7 +277,7 @@ bool parseMCommand(const char * cmd)
     switch(cmdID)
     {
     case 3: // M3/M106 - UV LED On
-    case 106: 
+    case 106:
         processLEDOnCmd();
         return true;
 
@@ -338,7 +347,7 @@ int main(int argc, char** argv)
             updateLastMovement();
         }
 #endif //SUPPORT_UP_DOWN_BUTTONS
-        
+
 #if SUPPORT_LED_ON_BUTTON
         if(isButtonPressed(LED_ON_BTN_PIN))
             processLEDButon();
