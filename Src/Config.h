@@ -18,7 +18,7 @@ const float DEFAULT_ACCELERATION = 20; // mm/s2
 //#define SUPPORT_UP_DOWN_BUTTONS 1
 
 #if SUPPORT_UP_DOWN_BUTTONS
-// a single z-axis movement using HW buttons 
+// a single z-axis movement using HW buttons
 const float MANUAL_MOVEMENT_MM = 0.1; //mm
 
 // After a few single moves Z-axis will move with low speed/acceleration
@@ -39,6 +39,13 @@ const int DOWN_BTN_PUD = 2; // PUD_UP
 
 #endif //SUPPORT_UP_DOWN_BUTTONS
 
+//Enable support of limit switches
+const int Z_BOT_PIN = 20;
+const int Z_TOP_PIN = 21;
+
+//Pull UP/DN for limit switches. (Both set to active high)
+const int Z_BOT_PUD = 2;
+const int Z_TOP_PUD = 2;
 
 // Enable this option if the printer has hardware LED On/Off button
 //#define SUPPORT_LED_ON_BUTTON 1
