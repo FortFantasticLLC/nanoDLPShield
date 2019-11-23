@@ -243,7 +243,7 @@ bool parseGCommand(const char * cmd)
             processMotorOnCmd();
             processMoveCmd(len, speed);
             updateLastMovement();
-
+	    
             // NanoDLP waits for a confirmation that movement was completed
             ptyWrite("Z_move_comp");
             return true;
@@ -256,6 +256,13 @@ bool parseGCommand(const char * cmd)
         }
         case 28: // G28 Home
         {
+	    setSteperLowSpeed();
+	    while (!isButtonPressed(Z_BOT_PIN)) {
+		if(stepper.motionComplete())
+            		stepper.setupRelativeMoveInMillimeters(MANUAL_MOVEMENT_MM * -1);
+        	else
+            		stepper.processMovement();	        
+	    }
 
         }
         case 90: // G90 - Set Absolute Positioning
